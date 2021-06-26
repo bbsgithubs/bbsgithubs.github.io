@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bbsgithubs.github.io</id>
     <title>梦里幽境 丨 回忆的角落</title>
-    <updated>2021-06-26T00:12:20.613Z</updated>
+    <updated>2021-06-26T00:13:43.518Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bbsgithubs.github.io"/>
     <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2021, 梦里幽境 丨 回忆的角落</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://bbsgithubs.github.io/hello-gridea/</id>
-        <link href="https://bbsgithubs.github.io/hello-gridea/">
+        <id>https://bbsgithubs.github.io/post/hello-gridea/</id>
+        <link href="https://bbsgithubs.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>

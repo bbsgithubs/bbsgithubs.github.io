@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bbsgithubs.github.io</id>
-    <title>梦里幽境 丨 回忆的角落</title>
-    <updated>2021-06-26T00:14:10.325Z</updated>
+    <title>Dream tok</title>
+    <updated>2021-06-26T03:34:41.678Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bbsgithubs.github.io"/>
     <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
-    <subtitle>那年初夏掠过飞逝的青春,你那远去的背影深埋于心海</subtitle>
+    <subtitle>那年初夏掠过飞逝的青春
+&lt;br&gt;你那远去的背影深埋于心海</subtitle>
     <logo>https://bbsgithubs.github.io/images/avatar.png</logo>
     <icon>https://bbsgithubs.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 梦里幽境 丨 回忆的角落</rights>
+    <rights>All rights reserved 2021, Dream tok</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://bbsgithubs.github.io/post/hello-gridea/</id>
-        <link href="https://bbsgithubs.github.io/post/hello-gridea/">
+        <id>https://bbsgithubs.github.io/post/hello/</id>
+        <link href="https://bbsgithubs.github.io/post/hello/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>

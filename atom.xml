@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.mcfen.net</id>
+    <id>https://bbsgithubs.github.io</id>
     <title>Dream tok</title>
-    <updated>2021-06-26T22:11:30.416Z</updated>
+    <updated>2021-06-26T22:16:24.166Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.mcfen.net"/>
-    <link rel="self" href="https://blog.mcfen.net/atom.xml"/>
+    <link rel="alternate" href="https://bbsgithubs.github.io"/>
+    <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
     <subtitle>思念你 在梦里 散不去</subtitle>
-    <logo>https://blog.mcfen.net/images/avatar.png</logo>
-    <icon>https://blog.mcfen.net/favicon.ico</icon>
+    <logo>https://bbsgithubs.github.io/images/avatar.png</logo>
+    <icon>https://bbsgithubs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Dream tok</rights>
     <entry>
         <title type="html"><![CDATA[2021.6.26]]></title>
-        <id>https://blog.mcfen.net/post/2021626/</id>
-        <link href="https://blog.mcfen.net/post/2021626/">
+        <id>https://bbsgithubs.github.io/post/2021626/</id>
+        <link href="https://bbsgithubs.github.io/post/2021626/">
         </link>
         <updated>2021-06-26T14:58:03.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[2020.5.45]]></title>
-        <id>https://blog.mcfen.net/post/2020545/</id>
-        <link href="https://blog.mcfen.net/post/2020545/">
+        <id>https://bbsgithubs.github.io/post/2020545/</id>
+        <link href="https://bbsgithubs.github.io/post/2020545/">
         </link>
         <updated>2020-06-01T15:00:37.000Z</updated>
         <summary type="html"><![CDATA[<p>阿萨世纪大厦和<br>
@@ -32,8 +32,8 @@ sadasd</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://blog.mcfen.net/post/hello/</id>
-        <link href="https://blog.mcfen.net/post/hello/">
+        <id>https://bbsgithubs.github.io/post/hello/</id>
+        <link href="https://bbsgithubs.github.io/post/hello/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>

@@ -589,18 +589,18 @@ p > code {
   }
 }
 .post-button {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .text-center {
   text-align: center;
 }
 .post-button .btn {
   color: #555;
-  font-size: 14px;
+  font-size: 13px;
   background: #fff;
-  border-radius: 2px;
+  border-radius: 20px;
   line-height: 2;
-  margin: 0 4px 8px 4px;
+  margin: 0 4px 0px 4px;
 }
 .btn {
   display: inline-block;
@@ -624,8 +624,8 @@ p > code {
 }
 .post-footer .post-eof {
   display: block;
-  margin: 40px auto 30px;
-  width: 8%;
+  margin: 20px auto 10px;
+  width: 96%;
   height: 1px;
   background: #ccc;
   text-align: center;

@@ -2051,7 +2051,9 @@ p > code {
     margin-bottom: 10px;
   }
 }
-body {
+.bg-color .bg-color {
+      background: transparent !important;
+    }body {
       background-color: #eee;
     }.header {
         width: 980px;
@@ -2062,6 +2064,10 @@ body {
         width: 980px;
         margin: 0 auto;
       }
+    
+    .post-body {
+      font-size: 14px !important
+    }
     body {
       color: #555;
     }
@@ -2072,7 +2078,7 @@ body {
       border-bottom-color: #555;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
-      background: #eeeeeefe;
+      background: #eeeeeee2;
     }h1, h2, h3, h4, h5, h6 {
       color: #555;
     }
@@ -2119,11 +2125,11 @@ body {
       }.nav-item a:hover {
         color: #222;
       }.nav-item-active {
-      background: #f9f9f9fe;
+      background: #f9f9f9e2;
     }
 
     .nav-item:hover {
-      background: #f9f9f9fe;
+      background: #f9f9f9e2;
       color: rgba(0, 0, 0, 0.98);
     }.site-author-image {
       border-radius: 50%;
@@ -2135,11 +2141,11 @@ body {
       transition-duration: 59s;
       transition-timing-function: cubic-bezier(.34,0,.84,1);
     }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #ced4da;
+      border-bottom-color: #ced4da;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #f1f3f5;
+      border-bottom-color: #f1f3f5;
     }.active-current > a {
       color: #fc6423 !important;
       border-bottom-color: #fc6423 !important;
@@ -2159,9 +2165,9 @@ body {
       color: #fc6423;
       border-bottom-color: #fc6423;
     }.reward-btn-text {
-        background-color: #0c8599fe !important;
+        background-color: #1971c2e2 !important;
       }.bg-color {
-      background-color: #fffffffe;
+      background-color: #ffffffe2;
     }
     .gemini .blog-header, .gemini .sidebar-wrapper, .gemini .article-wrapper, .gemini .post, .gemini .page, .gemini .section, .gemini .section-box, .gemini .sidebar-box, .gemini .friends-section {
       border-radius: 23px;
@@ -2176,13 +2182,13 @@ body {
       background: #000;
     }
     .brand {
-      background: #000000fe;
+      background: #000000e2;
     }
     .main-title, .brand {
       color: #FFF !important;
     }
     .mist .site-title i {
-      background: #FFFFFFfe;
+      background: #FFFFFFe2;
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {

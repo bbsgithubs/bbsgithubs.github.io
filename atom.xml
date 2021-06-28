@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bbsgithubs.github.io</id>
     <title>Dream tok</title>
-    <updated>2021-06-27T07:37:59.358Z</updated>
+    <updated>2021-06-28T20:35:42.322Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bbsgithubs.github.io"/>
     <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
@@ -11,23 +11,39 @@
     <icon>https://bbsgithubs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Dream tok</rights>
     <entry>
-        <title type="html"><![CDATA[2021.6.26]]></title>
-        <id>https://bbsgithubs.github.io/post/2021626/</id>
-        <link href="https://bbsgithubs.github.io/post/2021626/">
+        <title type="html"><![CDATA[「梦里幽境」 ☯碎碎唸念 絕筆？？☯]]></title>
+        <id>https://bbsgithubs.github.io/post/20200328/</id>
+        <link href="https://bbsgithubs.github.io/post/20200328/">
         </link>
-        <updated>2021-06-26T14:58:03.000Z</updated>
+        <updated>2020-03-27T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2020.5.45]]></title>
-        <id>https://bbsgithubs.github.io/post/2020545/</id>
-        <link href="https://bbsgithubs.github.io/post/2020545/">
+        <title type="html"><![CDATA[阶段性小感想]]></title>
+        <id>https://bbsgithubs.github.io/post/20190504/</id>
+        <link href="https://bbsgithubs.github.io/post/20190504/">
         </link>
-        <updated>2020-06-01T15:00:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>阿萨世纪大厦和<br>
-sadasd</p>
+        <updated>2019-05-04T14:22:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「梦里幽境」 ☯管理自传???标题过于难起,就这样吧☯]]></title>
+        <id>https://bbsgithubs.github.io/post/20190311/</id>
+        <link href="https://bbsgithubs.github.io/post/20190311/">
+        </link>
+        <updated>2019-03-11T07:41:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)]]></title>
+        <id>https://bbsgithubs.github.io/post/20190215/</id>
+        <link href="https://bbsgithubs.github.io/post/20190215/">
+        </link>
+        <updated>2019-02-15T06:20:00.000Z</updated>
+        <summary type="html"><![CDATA[<p style="text-align:center">
+    <span style="font-family: &quot;times new roman&quot;;"><img src="https://i.loli.net/2019/04/26/5cc28124b0cfc.jpg" width="632" height="281" title="" alt="" style="width: 632px; height: 281px;"/></span>
+</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>阿萨世纪大厦和<br>
-sadasd</p>
+        <content type="html"><![CDATA[<p style="text-align:center">
+    <span style="font-family: &quot;times new roman&quot;;"><img src="https://i.loli.net/2019/04/26/5cc28124b0cfc.jpg" width="632" height="281" title="" alt="" style="width: 632px; height: 281px;"/></span>
+</p>
 ]]></content>
     </entry>
     <entry>

@@ -8,7 +8,7 @@
 <meta name="keywords" content="Super_chen520">
 <meta name="description" content="思念你 在梦里 散不去">
 <meta name="theme-color" content="#000">
-<title>Hello Gridea | Dream tok</title>
+<title>阶段性小感想 | Dream tok</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/favicon.ico?v=1624912516618">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/css/pisces.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/fonts/font-awesome.css">
@@ -41,8 +41,8 @@
 
 
 
-  <meta name="description" content="Hello Gridea" />
-  <meta name="keywords" content="" />
+  <meta name="description" content="阶段性小感想" />
+  <meta name="keywords" content="梦境,心情" />
 </head>
 
 <body>
@@ -193,8 +193,7 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/images/avatar.png"/>
@@ -243,195 +242,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -519,8 +329,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://bbsgithubs.github.io/post/hello/">
-      Hello Gridea
+    <a class="post-title-link" href="https://bbsgithubs.github.io/post/20190504/">
+      阶段性小感想
     </a>
   </h1>
   <div class="post-meta">
@@ -528,23 +338,42 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2018-12-12 00:00:00">2018-12-12</span>
+      <span class="publish-time" data-t="2019-05-04 22:22:22">2019-05-04</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">归类为</span>
+      
+      
+      <a href="https://bbsgithubs.github.io/tag/Deam/">
+        <span>梦境</span>
+      </a>、
+      
+      
+      
+      <a href="https://bbsgithubs.github.io/tag/emotion/">
+        <span>心情</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>253<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>320<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/hello/" data-flag-title="Hello Gridea" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/20190504/" data-flag-title="阶段性小感想" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -553,26 +382,7 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 吗</p>
-<p>😘 Enjoy~</p>
-
+              <p style="white-space: normal;"><span style="font-size: 14px; color: rgb(0, 112, 192);">(应某人请求，随便写点感想)</span></p><p style="white-space: normal;">       感觉梦里幽境是在没什么人的情况下，稀里糊涂的走到了今天，有时候想想有点不可思议. 刚开服那会有点冲劲和死要面子活受罪的感觉，立下了要开服的flag，不想对不起大家的期待，从以为不会花多少钱的天真到后来租VPS大投入的“后悔”，从以为要自己面对一切死要面子活受罪的后果到最后得到大家的很多帮助和支持...... 回想起这些，有种坐过山车的感觉，大起大落，不按套路的发展着...</p><p style="white-space: normal;">       说实在的，现在MC留给我的只有回忆了，让我认真再开始玩，我已经没那心境和时间，有些东西过了就过了，除了回忆不会再有什么未完待续，我现在所做这一切的价值只是给大家提供创造回忆的基础，让这个曾经带给我很多美好回忆的游戏也能给更多喜欢它的玩家创造美好的回忆....</p><p style="white-space: normal;">       梦里幽境是我的青春纪念册，也很希望它能成为大家的青春纪念册.</p><p style="white-space: normal;">                                             ---- 2019.06.04 下午</p><p style="text-align: center;"><img src="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g3p6yptj71j30w00e8dn3.jpg"/></p>
             </div>
             
               <div class="reward-btn">
@@ -593,16 +403,24 @@
   </ul>
   <div class="tags">
     
+      <a href="https://bbsgithubs.github.io/tag/Deam/"># 梦境</a>
+    
+      <a href="https://bbsgithubs.github.io/tag/emotion/"># 心情</a>
+    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)" href="https://bbsgithubs.github.io/post/20190215/">「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)" href="https://bbsgithubs.github.io/post/20190215/">上一篇</a>
+        <a class="nav-pc-next" title="「梦里幽境」 ☯碎碎唸念 絕筆？？☯" href="https://bbsgithubs.github.io/post/20200328/">「梦里幽境」 ☯碎碎唸念 絕筆？？☯</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="「梦里幽境」 ☯碎碎唸念 絕筆？？☯" href="https://bbsgithubs.github.io/post/20200328/">上一篇</a>
       
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title="「梦里幽境」 ☯管理自传???标题过于难起,就这样吧☯" href="https://bbsgithubs.github.io/post/20190311/">「梦里幽境」 ☯管理自传???标题过于难起,就这样吧☯</a>
+        <a class="nav-mobile-next" title="「梦里幽境」 ☯管理自传???标题过于难起,就这样吧☯" href="https://bbsgithubs.github.io/post/20190311/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>

@@ -8,7 +8,7 @@
 <meta name="keywords" content="Super_chen520">
 <meta name="description" content="思念你 在梦里 散不去">
 <meta name="theme-color" content="#000">
-<title>Wellcom Mcfen | Dream tok</title>
+<title>大学生的迷茫 | Dream tok</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/favicon.ico?v=1625078894302">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/css/pisces.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/fonts/font-awesome.css">
@@ -41,8 +41,8 @@
 
 
 
-  <meta name="description" content="Wellcom Mcfen" />
-  <meta name="keywords" content="梦境,Mcfen" />
+  <meta name="description" content="大学生的迷茫" />
+  <meta name="keywords" content="转载,分享" />
 </head>
 
 <body>
@@ -193,8 +193,7 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/images/avatar.png"/>
@@ -243,195 +242,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%AE%80%E4%BB%8B">💝简介💝</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -519,8 +329,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://bbsgithubs.github.io/post/hello/">
-      Wellcom Mcfen
+    <a class="post-title-link" href="https://bbsgithubs.github.io/post/20100907/">
+      大学生的迷茫
     </a>
   </h1>
   <div class="post-meta">
@@ -528,7 +338,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2017-02-14 14:58:22">2017-02-14</span>
+      <span class="publish-time" data-t="2010-09-07 10:59:36">2010-09-07</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -537,14 +347,14 @@
       <span class="pc-show language" data-lan="category-in">归类为</span>
       
       
-      <a href="https://bbsgithubs.github.io/tag/Deam/">
-        <span>梦境</span>
+      <a href="https://bbsgithubs.github.io/tag/reprint/">
+        <span>转载</span>
       </a>、
       
       
       
-      <a href="https://bbsgithubs.github.io/tag/mcfen/">
-        <span>Mcfen</span>
+      <a href="https://bbsgithubs.github.io/tag/share/">
+        <span>分享</span>
       </a>
       
       
@@ -553,17 +363,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>49<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1145<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/hello/" data-flag-title="Wellcom Mcfen" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/20100907/" data-flag-title="大学生的迷茫" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -572,17 +382,59 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>🏆  欢迎来到 <strong>梦里幽境</strong> ！<br>
-🚚  <strong>梦里幽境</strong> 是一个我的世界服务器,由一群热爱MC的玩家汇聚而成...</p>
-<!-- more -->
-<p><a href="https://www.mcfen.net">官网主页</a><br>
-<a href="https://download.mcfen.net">下载支持</a><br>
-<a href="https://map.mcfen.net">卫星地图</a></p>
-<h2 id="简介">💝简介💝</h2>
-<figure data-type="image" tabindex="1"><img src="https://img14.360buyimg.com/ddimg/jfs/t1/194988/38/5571/143661/60b34a74E2e8252d1/8e968446eaafd360.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://img13.360buyimg.com/ddimg/jfs/t1/168066/37/20403/275100/6083d5daE3b5bbd09/9e3f852e3222ef81.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://img12.360buyimg.com/ddimg/jfs/t1/195569/9/5674/139220/60b34ab8Eb8649e36/ffff4e0fb2dffbe6.png" alt="" loading="lazy"></figure>
-
+              <p style="TexT-inDenT: 2em">&nbsp;</p>
+<table cellspacing="5" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="pADDinG-riGHT: 0px; pADDinG-LeFT: 0px; pADDinG-BoTToM: 0px; MArGin: 0px; VerTiCAL-ALiGn: top; WiDTH: 243px; pADDinG-Top: 0px; HeiGHT: 318px" rowspan="2">
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<font style="FonT-siZe: 22px">第一，没有<font color="#990030">忧患意识</font>。<br>
+<br>
+<font color="#3721fd">中国学生为了能考上大学拼命学习，上了大学就不再认真学习了，对市场变化、社会变化关心度较低，而少数认真学习的，只知道学习，以为高学历找工作更容易，不懂得什么是学以致用。<br>
+<br>
+大学教材更新太慢，远远跟不上企业需要，大学教材更新周期是四年，而企业技术更新速度一两年，知识的时效性在快速缩短，大学生知识的有效期仅仅是三年。四年前还是社会需求的热门职业，四年后可能会变成了滞销专业，这就造成了在校学习的知识离市场需求较远。很多大学生不知道自己适合做什么，不适合做什么，到了大学毕业才“临时抱佛脚”，更有一大批学生有就业恐慌表现。<br>
+<br>
+解决办法：要掌握更前沿的知识，必须通过上网、到书店、去企业、进图书馆、听讲座来补充新知识。在读大学时就要研究市场，把知识放在实践中学习感悟。尤其鼓励的是直接进入企业学习和感悟，如果你做得好，企业就会直接把你留下。</font></font></p>
+<p>&nbsp;</p>
+<p><font style="FonT-siZe: 22px">&nbsp;&nbsp;&nbsp;第二，<font color="#990030">依赖性强，创造力弱</font>。<br>
+</font></p>
+<p><font style="FonT-siZe: 22px" color="#4DF878"><font color="#26AEF7">大学生已进入了成人阶段，而我国相当一部分大学生表现出“五靠”：考大学靠压（家长监督学习）；报自愿靠拍（家长定）；上大学靠供（家长投资）；找工作靠关系（家长运作）；选择职业靠感觉（没有科学的分析，家长凭经验）。大学生完全独立完成自己的意愿———选专业、定职业，这种依赖性，严重影响了大学生就业意向成交率。我重申一点，教育的失败就是人文教育的失败，而人文教育的失败，主要来自家庭。<br>
+<br>
+解决办法：大学生要学会做人，学会独立，脱离父母，上了大学，逼着自己参加社会实践，自食其力，尽量脱离家庭供给，做人要有志气。</font><br>
+</font></p>
+<p><font style="FonT-siZe: 22px">&nbsp;&nbsp;第三，<font color="#990030">错误的价值观</font>。<br>
+</font></p>
+<p><font style="FonT-siZe: 22px"><font color="#F16139">大学生就业理念受社会各种价值取向的影响，存在</font><br>
+<br>
+<br>
+<br>
+<br></font></p>
+</td>
+<td style="pADDinG-riGHT: 0px; pADDinG-LeFT: 0px; pADDinG-BoTToM: 0px; MArGin: 0px; VerTiCAL-ALiGn: top; WiDTH: 238px; pADDinG-Top: 0px; HeiGHT: 155px">
+<font style="FonT-siZe: 22px"><img style="WiDTH: 216px; HeiGHT: 222px" height="263" src="https://img10.360buyimg.com/ddimg/jfs/t1/184572/32/12075/174155/60dcbbc5E500b98ff/2c8b0bba1ae0fe02.jpg" width="303" name="image_operate_16871283829976546"><br>
+<font color="#3AD460"><font color="#11401D"><font color="#F16139">着误区：一是“</font><font color="#58E5EF">宁愿出国带光环，不在国内做职员</font><font color="#F16139">”。二是“</font><font color="#58E5EF">宁到外企做职员，不到中小企业做骨干</font><font color="#F16139">”。三是“</font><font color="#58E5EF">创业不如就业</font><font color="#F16139">”。四是“</font></font><font color="#58E5EF">就业难不如再考研</font><font color="#F16139">”。这些往往误导了大学生的就业行为。<br>
+<br>
+大学生不敬业的现象普遍存在，企业选择一个人的时候需要他什么样的素质呢？人品是第一位的。企业不会轻易把职位交给一个人品有缺欠的人，而人品的考察是个长期观察相处的结果，大学生想做成一件事并不像在学校里自己读书那么简单，大学生进入单位的第一个难题可能就是怎么处好人际关系，如何跟大家协同合作。需要一个人缘特别好的人，如果这个人能力很强，但人缘不好，所有人不帮你，你也做不成事。<br>
+<br>
+解决办法：放下知识分子清高的架子，和好高骛远的性格，脚踏实地，从最基层做起，基层岗位的空缺多的是，要有坚定的信念，企业需要的人才首先是人品性格上突出的人才。<br>
+<br>
+要明白从基层锻炼，不仅可以把知识转化为能力，而且心理素质会得到提升，更懂得基层工人的辛苦，而善于管理。成为优秀领导者的首要条件。只有肯做下人，才能上人。大学生要学会吃苦，经得起一线的磨练。<br>
+<br>
+最后，我告诉大学生，在校期间该读些什么书：为人的道理书、人际关系书、励志书、管理书、事务书这些书要多读，至于文章书要少读，闲杂书不读。我的空间的文章有选择的读一些，可能会改变一生的命运。充实自己智慧，不要磨砺自己的牙齿，有智慧的人，金钱不是问题。这是心灵和金钱的关系，人有多大胸怀就有多大事业，而知识放在第二位。&nbsp;中国最缺的不是技术人才，而是管理人才。<br>
+</font><br></font><br></font><br>
+<br></td>
+</tr>
+<tr>
+<td style="pADDinG-riGHT: 0px; pADDinG-LeFT: 0px; pADDinG-BoTToM: 0px; MArGin: 0px; VerTiCAL-ALiGn: top; WiDTH: 238px; pADDinG-Top: 0px; HeiGHT: 156px">
+<br>
+<br>
+<br>
+<br></td>
+</tr>
+</tbody>
+</table>
+<br>
             </div>
             
               <div class="reward-btn">
@@ -603,23 +455,23 @@
   </ul>
   <div class="tags">
     
-      <a href="https://bbsgithubs.github.io/tag/Deam/"># 梦境</a>
+      <a href="https://bbsgithubs.github.io/tag/reprint/"># 转载</a>
     
-      <a href="https://bbsgithubs.github.io/tag/mcfen/"># Mcfen</a>
+      <a href="https://bbsgithubs.github.io/tag/share/"># 分享</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)" href="https://bbsgithubs.github.io/post/20190215/">「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)" href="https://bbsgithubs.github.io/post/20190215/">上一篇</a>
+        <a class="nav-pc-next" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">Wellcom Mcfen</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">上一篇</a>
       
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="大学生的迷茫" href="https://bbsgithubs.github.io/post/20100907/">大学生的迷茫</a>
-        <a class="nav-mobile-next" title="大学生的迷茫" href="https://bbsgithubs.github.io/post/20100907/">下一篇</a>
+        <a class="nav-pc-next" title="我要的生活" href="https://bbsgithubs.github.io/post/20100603/">我要的生活</a>
+        <a class="nav-mobile-next" title="我要的生活" href="https://bbsgithubs.github.io/post/20100603/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

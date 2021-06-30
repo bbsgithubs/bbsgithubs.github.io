@@ -8,7 +8,7 @@
 <meta name="keywords" content="Super_chen520">
 <meta name="description" content="思念你 在梦里 散不去">
 <meta name="theme-color" content="#000">
-<title>Dream tok</title>
+<title>大学生应看的十八条建议 | Dream tok</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/favicon.ico?v=1625079656021">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/css/pisces.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/fonts/font-awesome.css">
@@ -41,6 +41,8 @@
 
 
 
+  <meta name="description" content="大学生应看的十八条建议" />
+  <meta name="keywords" content="转载,分享" />
 </head>
 
 <body>
@@ -173,10 +175,25 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  pisces">
+      class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">博客概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/images/avatar.png"/>
@@ -225,211 +242,260 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    jQuery.Velocity(hideElement, 'stop');
+    jQuery.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        jQuery.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box tag-line box-shadow-wrapper">
-          <section class="section tags-section posts-expand bg-color">
-            <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          转载
-          <small class="language" data-lan="tag">标签</small>
-        </h2>
-      </div>
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://bbsgithubs.github.io/post/20100907-1/">
+      大学生应看的十八条建议
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2010-09-07 11:44:50">2010-09-07</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">归类为</span>
+      
+      
+      <a href="https://bbsgithubs.github.io/tag/reprint/">
+        <span>转载</span>
+      </a>、
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20100907-1/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              09-07
-              <small>大学生应看的十八条建议</small>
-            </h1>
-          </div>
-        </div>
+      <a href="https://bbsgithubs.github.io/tag/share/">
+        <span>分享</span>
       </a>
       
       
-      
-      
-      
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20100907/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              09-07
-              <small>大学生的迷茫</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090813-2/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-13
-              <small>珍惜身的边人和事</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090813-1/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-13
-              <small>祝福母亲</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090812-2/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-12
-              <small>关爱父亲的健康</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090812-1/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-12
-              <small>知而无怠</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>8<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>2310<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+    
+    
+    <span id="/post/20100907-1/" data-flag-title="大学生应看的十八条建议" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <p><strong>一位懂事长给大学生的十八条建议 (希望能让你有所启发)</strong></p>
+<p><strong>一</strong>、读大学，究竟读什么？ 大学生和非大学生最主要的区别绝对不在于是否掌握了一门专业技能……一个经过独立思考而坚持错误观点的人比一个不假思索而接受正确观点的人更值得肯定……草木可以在校园年复一年地生长，而我们却注定要很快被另外一群人替代……尽管每次网到鱼的不过是一个网眼，但要想捕到鱼，就必须要编织一张网……</p>
+<p><strong>二</strong>、：三岔路口的抉择 不走弯路就是捷径……仕途，商界，学术。在这人生的三岔路口，你将何去何从……与其跟一百个人去竞争五个职位，不如跟一个人去竞争一个职位……学术精神天然的应当与尘嚣和喧哗保持足够的距离……商场不忌讳任何神话。你也完全可能成为下一个传奇……</p>
+<p>** 三**、专业无冷热，学校无高低 没有哪个用人单位会认为你代表了你的学校或者你的专业……既然是概率，就存在不止一种可能性……如果是选择学术，冷门专业比热门专业更容易获得成就……跨专业几乎早已成为一种流行一种时尚……大学之间的实力之争到了考研考场和人才市场原来是那样的微不足道……</p>
+<p><strong>四</strong>、不可一业不专，不可只专一业 千招会，不如一招熟……十个百分之十并不是百分之百，而是零……在这个现实的社会，真正实现个人价值才是最体面最有面子最有尊严的事情……要想知道需要学什么，最好的方式就是留意招聘信息……很多专业因为不具备专长的有效性，所以成为了屠龙之术……为什么不将“买一送一”的促销思维运用到求职应聘的过程中来呢……</p>
+<p><strong>五</strong>、不逃课的学生不是好学生 什么课都不逃，跟什么课都逃掉没什么两样……读大学，关键是学会思考问题的方法……逃课没有错，但是不要逃错课……英语角绝对不是学英语的地方……为了英语丢了专业，那就舍本逐末了……招聘单位是用人才的地方，而不是培养人才的地方……既要逃课，又要让老师给高分……</p>
+<p><strong>六</strong>、勤工俭学的辩证法 对于贫困生来说，首先要做的不是挣钱，而是省钱……大部分女生将电脑当成了影碟机，大部分男生将电脑当成了游戏机……在这个处女膜都可以随意伪造的年代，还有什么值得轻易相信……态度决定一切……当学习下降到次要的地位，大学生就只能说是兼职的学生了……</p>
+<p><strong>七</strong>、做事不如做人，人脉决定成败 学问好不如做事好，做事好不如做人好……会说话，就能减少奋斗三十年……一个人有多少钱并不是指他拥有多少钱的所有权，而是指他拥有多少钱的使用权……一个人赚的钱，12.5%是靠自身的知识，87.5%则来自人脉关系……三十岁以前靠专业赚钱，三十岁以后拿人脉赚钱……你和世界上的任何一个人之间只隔着四个人……</p>
+<p><strong>八</strong>、互联网：倚天剑与达摩克利斯之剑 花两个小时就写出一篇天衣无缝的优秀毕业论文……在互联网领域创业的技术门槛并不高，关键的是市场眼光和营销能力……轻舞飞扬已经红颜薄命了，而痞子蔡却继续跟别的女孩发生着一次又一次的亲密接触……很多大学生的网友遍布祖国大江南北，可他们却从未主动向周围的人说一声：你好，我们可以聊聊吗……</p>
+<p><strong>九</strong>、恋爱：花开堪折方须折 爱情是不期而至的，可以期待，但不可以制造……越是寂寞，越要警惕爱情……既然单身是可耻的，那西门庆是不是应该被评为宋朝十大杰出青年……花开堪折方须折，莫让鲜花败残枝……一个有一万块钱的人为你花掉一百元，你只占了他的百分之一；而一个只有十块钱的人为你花掉十块，你就成了他的全部……</p>
+<p><strong>十</strong>、性：上帝死了，众神在堕落 爱要说，爱要做……我只有在肉体一下一下的撞击中才感到快乐。经过之后，将是更大的寂寞更大的空虚……为何要让别人的虚荣成为对自己的伤害……当她机械地躺在床上张开双腿，她的父母正在憧憬着女儿的未来……一朝春尽红颜老，花落人亡两不知……</p>
+<p><strong>十一</strong>、考研：痛苦的安乐死 没有比浪费青春更失败的事情了……研究生扩招的速度是30%，也就意味着硕士学历贬值的速度是30%……同样是付出三年的努力，你可以让E1的值增加1，也可以让E2的值增加2甚至增加3……读完硕士或博士并不等于工作能力更强……面对13.54万的成本，你还会毫不犹豫地投资读研究生吗……努力就会有结果，但不一定是好结果……</p>
+<p><strong>十二</strong>、留学：“海龟”变“海带” 月薪2500元的工作，居然引得三个“海归”硕士争相竞聘……对于某些专业而言，去美国留学和去埃塞俄比亚留学没什么两样……既然全世界的公司都想到中国的市场上来瓜分蛋糕，为什么中国人还要一门心思到国外去留学然后给外国人打工……</p>
+<p><strong>十三</strong>、非统招：养卑照样处优 她在中国信息产业界创下了几项纪录。她被称为中国的“打工皇后”。而她不过是一名自考大专生……要想把曾经输掉的东西赢回来，就必须把自己比别人少付出的努力补上来……非统招生不但要有一定的实力，而且必须掌握一定的技巧，做到扬长避短出奇制胜……路在脚下。好走，走好……</p>
+<p><strong>十四</strong>、毕业：十面埋伏的陷阱 母校不把自己当母亲，你又何必把自己当儿女……听辅导班不过是花钱买踏实……人才市场就是一个地雷阵……通过多种方式求职固然没有错，但是千万不要饥不择食……只要用人单位一说要你交钱，你掉头就走便是了……这年头立字尚且不足以为据，更何况一个口头约定……</p>
+<p><strong>十五</strong>、求职：做人不要太厚道 求职简历必须突出自己的核心竞争力……求职的时候大可不必像严守一那样“有一说一”……一个人说假话并不难，难的是把假话说到底，并且不露一丝破绽……在填写自己的特长时，一定要尽可能详细……一份求职简历只要用一张A4纸做个表格就足够了……面试其实是有规律的，每次面试的时候只要背标准答案就行了……</p>
+<p><strong>十六</strong>、骑一头能找千里马的驴 美国铁路两条铁轨之间的标准距离是4英尺8.5英寸，为什么呢？因为两匹马臀部之间的宽度是4英尺8.5英寸……垃圾是放错位置的人才……世界上最大的悲剧莫过于有太多的年轻人从来没有发现自己真正想做什么……中小型企业或许能够让你得到更充分的锻炼……从基层做起并不意味着可以从基层的每一个职位做起……要“钱途”，更要前途……</p>
+<p><strong>十七</strong>、写字楼政治：白领必修课 大公司是做人，小公司是做事……职员能否得到提升，很大程度不在于是否努力，而在于老板对你的赏识程度……公司的事情和秘密永远比你想象的还要复杂和深奥……在适当的时候装糊涂不但是必要的，而且是睿智的……就把你的同事当成一群你可以叫得出名字的陌生人好了……</p>
+<p><strong>十八</strong>、创业：29岁以前做富翁 瘦死的骆驼比马大……撑死胆大的，饿死胆小的……不再是“大鱼吃小鱼”，而是“快鱼吃慢鱼”……对于趋势的把握是一个创业者最重要的能力……高科技行业留给毕业生的空间已经很小……欲速则不达。在创业以前通过给别人打工而积累经验是非常必要的……市场永远比产品更重要……钱不够花，怎么办？第一，看菜吃饭；第二，借鸡生蛋……</p>
+
+            </div>
+            
+              <div class="reward-btn">
+                <div class="reward-btn-text">赞赏</div>
+              </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者: </strong>
+      Super_chen520
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明: </strong>
+      除特别声明外,所有文章内容均来自原创,转载请注明出处!
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://bbsgithubs.github.io/tag/reprint/"># 转载</a>
+    
+      <a href="https://bbsgithubs.github.io/tag/share/"># 分享</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">Wellcom Mcfen</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="大学生的迷茫" href="https://bbsgithubs.github.io/post/20100907/">大学生的迷茫</a>
+        <a class="nav-mobile-next" title="大学生的迷茫" href="https://bbsgithubs.github.io/post/20100907/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-          </section>
+            
+            
+  <script src="https://cdn.jsdelivr.net/gh/shuiqing2046/shuiqing2046.github.io@master/assets/js/fixValine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'Id20a2IBLWim6sM3dHuli8QK-gzGzoHsz',
+    appKey: '4rSRJCLOWAkFWQf8nnRnKSFG',
+    avatar: 'mp',
+    placeholder: '看完有啥戏法? 说说呗~',
+    pageSize: '',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'true',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
         </div>
       </div>
     </div>
@@ -635,6 +701,235 @@
     aelem.appendChild(image);
     parent.insertBefore(aelem, next);
   })
+</script>
+
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持,我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+            <img id="zfb" class="reward-img" src="https://pay.mcfen.net/images/zfb.png" alt="赞赏码">
+          
+          
+            <img id="wx" class="reward-img" src="https://pay.mcfen.net/images/wx.png" alt="赞赏码">
+          
+        </div>
+      </div>
+      <p class="reward-word">大爷行行好,赏口饭吃吧</p>
+      <p class="reward-tip">打开手机扫一扫,即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      <div id="zfbBtn" class="pay-text">
+        支付宝
+      </div>
+      
+      
+      <div id="wxBtn" class="pay-text">
+        微信支付
+      </div>
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        jQuery.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        jQuery.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        jQuery.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        jQuery.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      jQuery.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      jQuery.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
 </script>
 
   </div>
@@ -1659,7 +1954,6 @@ L最恶毒的话骂对方，现代大学教育让她们一面临&#34;丢脸&#34;
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/js/mouse/fireworks.js"></script>
-
 
 
 

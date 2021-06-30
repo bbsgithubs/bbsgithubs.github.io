@@ -8,7 +8,7 @@
 <meta name="keywords" content="Super_chen520">
 <meta name="description" content="思念你 在梦里 散不去">
 <meta name="theme-color" content="#000">
-<title>Wellcom Mcfen | Dream tok</title>
+<title>祝福母亲 | Dream tok</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/favicon.ico?v=1625072670112">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/css/pisces.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/fonts/font-awesome.css">
@@ -41,8 +41,8 @@
 
 
 
-  <meta name="description" content="Wellcom Mcfen" />
-  <meta name="keywords" content="梦境,Mcfen" />
+  <meta name="description" content="祝福母亲" />
+  <meta name="keywords" content="分享,心情" />
 </head>
 
 <body>
@@ -193,8 +193,7 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/images/avatar.png"/>
@@ -243,195 +242,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%AE%80%E4%BB%8B">💝简介💝</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -519,8 +329,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://bbsgithubs.github.io/post/hello/">
-      Wellcom Mcfen
+    <a class="post-title-link" href="https://bbsgithubs.github.io/post/20090813/">
+      祝福母亲
     </a>
   </h1>
   <div class="post-meta">
@@ -528,7 +338,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2017-02-14 14:58:22">2017-02-14</span>
+      <span class="publish-time" data-t="2009-08-13 01:02:09">2009-08-13</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -537,14 +347,14 @@
       <span class="pc-show language" data-lan="category-in">归类为</span>
       
       
-      <a href="https://bbsgithubs.github.io/tag/Deam/">
-        <span>梦境</span>
+      <a href="https://bbsgithubs.github.io/tag/share/">
+        <span>分享</span>
       </a>、
       
       
       
-      <a href="https://bbsgithubs.github.io/tag/mcfen/">
-        <span>Mcfen</span>
+      <a href="https://bbsgithubs.github.io/tag/emotion/">
+        <span>心情</span>
       </a>
       
       
@@ -553,17 +363,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>49<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1054<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/hello/" data-flag-title="Wellcom Mcfen" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/20090813/" data-flag-title="祝福母亲" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -572,17 +382,158 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>🏆  欢迎来到 <strong>梦里幽境</strong> ！<br>
-🚚  <strong>梦里幽境</strong> 是一个我的世界服务器,由一群热爱MC的玩家汇聚而成...</p>
-<!-- more -->
-<p><a href="https://www.mcfen.net">官网主页</a><br>
-<a href="https://download.mcfen.net">下载支持</a><br>
-<a href="https://map.mcfen.net">卫星地图</a></p>
-<h2 id="简介">💝简介💝</h2>
-<figure data-type="image" tabindex="1"><img src="https://img14.360buyimg.com/ddimg/jfs/t1/194988/38/5571/143661/60b34a74E2e8252d1/8e968446eaafd360.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://img13.360buyimg.com/ddimg/jfs/t1/168066/37/20403/275100/6083d5daE3b5bbd09/9e3f852e3222ef81.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://img12.360buyimg.com/ddimg/jfs/t1/195569/9/5674/139220/60b34ab8Eb8649e36/ffff4e0fb2dffbe6.png" alt="" loading="lazy"></figure>
-
+              <p ><span>写给</span><a><span>母亲</span></a><span>的诗</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://s3.sinaimg.cn/orignal/60e61f9fg70f44d960742&amp;690" target="_blank"></a><a href="http://s12.sinaimg.cn/orignal/60e61f9fg70f447f9c8db&amp;690" target="_blank"></a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>冰心</span><br />
+<a><img height="185" src="https://img10.360buyimg.com/ddimg/jfs/t1/175148/30/17713/1142807/60dc9f79Ed5ead326/0d2180738eef866f.gif" width="205" align="right" alt="祝福母亲" title="祝福母亲" style="width:395px;height:321px;" /></a><br />
+<a><span>母亲</span></a><span>，好久以来<br />
+就想为你写一首诗<br />
+但写了好多次<br />
+还是没有写好<br />
+</span><a><span>母亲</span></a><span>，为你写的这首诗<br />
+我不知道该怎样开头<span>的</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a></a><br />
+<span><span>不知道该怎样结尾<br />
+也不知道该写些什么<br />
+就像儿时面对你严厉的巴掌<br />
+我不知道是该勇敢接受<br />
+还是该选择逃避</span><br />
+<br />
+</span><a><span>母亲</span></a><span>，今夜我又想起了你<br />
+我决定还是要为你写一首诗<br />
+哪怕写得不好<br />
+哪怕远在老家的你<br />
+永远也读不到……<br />
+<br />
+<br />
+</span><a ><span>母亲</span></a><span>，倘若你梦中看见一只很小的白船儿，<br />
+不要惊讶他无端入梦。<br />
+这是你至爱的女儿含著泪叠的，<br />
+万水千山，求他载著她的爱和悲哀归去。</span> 
+</p>
+<p >
+	&nbsp;
+</p>
+<p >
+	&nbsp;&nbsp;&nbsp;<a ><span>母亲</span></a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span><span>舒婷</span></span><br />
+<br />
+<span><span>你苍白的指尖理着我的双鬓</span><a><span><img height="128" src="https://img10.360buyimg.com/ddimg/jfs/t1/196757/16/11156/13861/60dca060Ebfe30625/d9efc9a923183dad.gif" width="258" align="right" alt="祝福母亲" title="祝福母亲" style="width:199px;height:199px;" /></span></a><br />
+<span>我禁不住象儿时一样<br />
+紧紧拉住你的衣襟<br />
+呵，</span></span><a><span>母亲</span></a><span><span><br />
+为了留住你渐渐隐去的身影<br />
+虽然晨曦已把梦剪成烟缕<br />
+我还是久久不敢睁开眼睛</span><br />
+<br />
+<span>我依旧珍藏着那鲜红的围巾</span><br />
+</span><span>生怕浣洗会使它<br />
+失去你特有的温馨<br />
+呵，</span><a ><span>母亲</span></a><span><span><br />
+岁月的流水不也同样无情<br />
+生怕记忆也一样退色呵<br />
+我怎敢轻易打开它的画屏</span><br />
+<br />
+</span><span>为了一根刺我曾向你哭喊<br />
+如今带着荆冠，我不敢<br />
+一声也不敢呻吟<br />
+呵，</span><a><span>母亲</span></a><span><span><br />
+我常悲哀地仰望你的照片<br />
+纵然呼唤能够穿透黄土<br />
+我怎敢惊动你的安眠</span><br />
+<br />
+</span><span>我还不敢这样陈列爱的祭品<br />
+虽然我写了许多支歌<br />
+给花、给海、给黎明<br />
+呵，</span><a><span>母亲</span></a><span><br />
+我的甜柔深谧的怀念<br />
+不是激流，不是瀑布<br />
+是花木掩映中唱不出歌声的枯井</span> 
+</p>
+<p >
+	&nbsp;
+</p>
+<table cellspacing="0" cellpadding="0" width="720" align="center" border="0" style="margin:0px;padding:0px;font-weight:900;font-family:&quot;color:#C0BDBB;font-size:14px;background-color:#000000;" class="ke-zeroborder">
+	<tbody>
+		<tr>
+			<td valign="top" colspan="2" height="220" style="font-family:&quot;font-weight:bolder;">
+				<p>
+					<a><span>母亲</span></a><span><span>组诗</span></span><br />
+（一）
+<br />
+<span><span>您的伟大 凝结了我的血肉</span><a><span><img height="128" src="https://img10.360buyimg.com/ddimg/jfs/t1/184679/22/11975/24931/60dca132Eef0a5e7a/83f43a829f38c3d7.gif" width="202" align="right" alt="祝福母亲" title="祝福母亲" style="width:218px;height:359px;" /></span></a><br />
+<span>您的伟大 塑造了我的灵魂<br />
+您的一生 是一次爱的航行<br />
+您用优美的年轮<br />
+编成一册散发油墨清香的日历<br />
+年年 我都在您的深情里度过<br />
+在您的肩膀和膝头嬉戏</span><br />
+</span>（二）<br />
+<span>您是一棵大树<br />
+春天 倚着您幻想<br />
+夏天 倚着您繁荣<br />
+秋天 倚着您成熟<br />
+冬天 倚着您沉思<br />
+您那高大宽广的树冠<br />
+使四野永不荒野<br />
+</span><a><span>母亲</span></a>&nbsp;<span>您给了我生命<br />
+您是抚育我成长的土地</span><br />
+（三）<br />
+<span>在悲伤时 您是慰藉<br />
+在沮丧时 您是希望<br />
+在软弱时 您是力量<br />
+在您小小海湾中躲避风雨<br />
+您为我开阔了视野<br />
+您是我永远的挚友 生命的动力</span><br />
+（四）<br />
+<span><span>您怀着爱怜 谨慎地俯身守护<br />
+您尽情袒露明亮的胸襟<br />
+您旺盛的精力笑容坚强<br />
+您沸腾的血液奔流不息</span></span><br />
+（五）<br />
+<span>让我沉浸在您的欢乐中<br />
+让我享受在您的温馨中<br />
+让我陶醉在您的双臂间<br />
+让我偎依在您的怀抱里</span><br />
+（六）<br />
+<span>悠悠的云里有淡淡的诗<br />
+淡淡的诗里有绵绵的爱<br />
+绵绵的爱里有深深的情<br />
+深深的情里有浓浓的意</span><br />
+（七）<br />
+<span>如果</span><a><span>母亲</span></a><span><span>是雨 那我就是雨后的虹</span><br />
+<span>如果</span></span><a><span>母亲</span></a><span><span>是月 那我就是捧月的星</span><br />
+</span><a><span>母亲</span></a><span><span>是我生长的根</span><br />
+<span>我是</span></span><a><span>母亲</span></a><span><span>理想的果</span></span><br />
+（八）<br />
+<span>我长大了</span>&nbsp;<a><span>母亲</span></a><span><span>的黑发却似枫叶上的<br />
+寒霜 星星点点闪着银光<br />
+我深深地吻着那些岁月的痕迹<br />
+捧掬我一颗心献给您</span></span><br />
+（九）<a><img height="128" src="https://img11.360buyimg.com/ddimg/jfs/t1/196488/3/11107/14772/60dca18bEdfa53e19/2c71291a9756e4f7.gif" width="196" align="right" alt="祝福母亲" title="祝福母亲" style="width:187px;height:169px;" /></a><br />
+<span>愿芳香醇厚的甜蜜萦绕您的生活<br />
+愿我银铃般的笑声盈满您的眉间<br />
+愿我全部的祝福揉进您的心田<br />
+一片绿叶 饱含它对根的情谊<br />
+一首颂歌 浓缩我对您的敬爱<br />
+让您心中的花朵盛开如云<br />
+让芬芳伴您走过悠悠岁月</span> 
+				</p>
+				<p>
+					&nbsp;
+				</p>
+				<p>
+					<span><span>妈妈</span><span>是</span><span style="font-weight:bolder;font-family:&quot;"><span>天</span></span></span><span>，</span> 
+				</p>
+				<p>
+					<span><span>妈妈</span><span>是</span><span style="font-weight:bolder;"><span>地</span></span></span><span>，</span> 
+				</p>
+				<p>
+					<span><span>妈妈</span>是我们伟大的<span style="font-weight:bolder;"><span>上帝</span></span>！</span> 
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br />
             </div>
             
               <div class="reward-btn">
@@ -603,24 +554,20 @@
   </ul>
   <div class="tags">
     
-      <a href="https://bbsgithubs.github.io/tag/Deam/"># 梦境</a>
+      <a href="https://bbsgithubs.github.io/tag/share/"># 分享</a>
     
-      <a href="https://bbsgithubs.github.io/tag/mcfen/"># Mcfen</a>
+      <a href="https://bbsgithubs.github.io/tag/emotion/"># 心情</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)" href="https://bbsgithubs.github.io/post/20190215/">「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)" href="https://bbsgithubs.github.io/post/20190215/">上一篇</a>
+        <a class="nav-pc-next" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">Wellcom Mcfen</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">上一篇</a>
       
     </div>
     <div class="nav-next">
-      
-        <a class="nav-pc-next" title="祝福母亲" href="https://bbsgithubs.github.io/post/20090813/">祝福母亲</a>
-        <a class="nav-mobile-next" title="祝福母亲" href="https://bbsgithubs.github.io/post/20090813/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bbsgithubs.github.io</id>
     <title>Dream tok</title>
-    <updated>2021-06-29T14:33:36.871Z</updated>
+    <updated>2021-06-30T17:04:34.499Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bbsgithubs.github.io"/>
     <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
@@ -58,5 +58,12 @@
         <content type="html"><![CDATA[<p>🏆  欢迎来到 <strong>梦里幽境</strong> ！<br>
 🚚  <strong>梦里幽境</strong> 是一个我的世界服务器,由一群热爱MC的玩家汇聚而成...</p>
 ]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[祝福母亲]]></title>
+        <id>https://bbsgithubs.github.io/post/20090813/</id>
+        <link href="https://bbsgithubs.github.io/post/20090813/">
+        </link>
+        <updated>2009-08-12T17:02:09.000Z</updated>
     </entry>
 </feed>

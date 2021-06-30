@@ -8,7 +8,7 @@
 <meta name="keywords" content="Super_chen520">
 <meta name="description" content="思念你 在梦里 散不去">
 <meta name="theme-color" content="#000">
-<title>Dream tok</title>
+<title>独自去登山 | Dream tok</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/favicon.ico?v=1625077625580">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/css/pisces.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/fonts/font-awesome.css">
@@ -41,7 +41,8 @@
 
 
 
-  <meta name="description" content="思念你 在梦里 散不去">
+  <meta name="description" content="独自去登山" />
+  <meta name="keywords" content="分享,心情" />
 </head>
 
 <body>
@@ -90,7 +91,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/archives/" target="_self">
@@ -174,10 +175,25 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  pisces">
+      class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">博客概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/images/avatar.png"/>
@@ -226,216 +242,247 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
-      }
-    });
-  }
-  </script>
-        <div class="section-box box-shadow-wrapper">
-          <section class="section archives-section bg-color posts-expand">
-            
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
 
-<div class="bg-color">
-  <div class="archive-timeline-box">
-    <div class="archive-timeline-title">
-      
-        <h2 class="language" data-lan="archives" data-count="11">当前共创作了11篇日志</h2>
-      
-    </div>
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    jQuery.Velocity(hideElement, 'stop');
+    jQuery.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        jQuery.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://bbsgithubs.github.io/post/20090824/">
+      独自去登山
+    </a>
+  </h1>
+  <div class="post-meta">
     
-      
-      
-        <div class="node-title">
-          <h2 class="tag-year">2020</h2>
-        </div>    
-        
-      
-      <a href="https://bbsgithubs.github.io/post/20200328/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              03-28
-              <small>「梦里幽境」 ☯碎碎唸念 絕筆？？☯</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2009-08-24 14:25:35">2009-08-24</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
     
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">归类为</span>
       
       
-        <div class="node-title">
-          <h2 class="tag-year">2019</h2>
-        </div>    
-        
+      <a href="https://bbsgithubs.github.io/tag/share/">
+        <span>分享</span>
+      </a>、
       
-      <a href="https://bbsgithubs.github.io/post/20190504/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              05-04
-              <small>阶段性小感想</small>
-            </h1>
-          </div>  
-      </div>
+      
+      
+      <a href="https://bbsgithubs.github.io/tag/emotion/">
+        <span>心情</span>
       </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
     
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20190311/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              03-11
-              <small>「梦里幽境」 ☯管理自传???标题过于难起,就这样吧☯</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>370<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
     
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20190215/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              02-15
-              <small>「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
     
-      
-      
-        <div class="node-title">
-          <h2 class="tag-year">2017</h2>
-        </div>    
-        
-      
-      <a href="https://bbsgithubs.github.io/post/hello/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              02-14
-              <small>Wellcom Mcfen</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
     
-      
-      
-        <div class="node-title">
-          <h2 class="tag-year">2009</h2>
-        </div>    
-        
-      
-      <a href="https://bbsgithubs.github.io/post/20090824/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              08-24
-              <small>独自去登山</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090822-1/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              08-22
-              <small>追忆</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090813-2/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              08-13
-              <small>珍惜身的边人和事</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090813-1/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              08-13
-              <small>祝福母亲</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090812-2/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              08-12
-              <small>关爱父亲的健康</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
-    
-      
-      
-      <a href="https://bbsgithubs.github.io/post/20090812-1/">
-        <div class="motion-warpper tag-archive-node">
-          <div class="tag-node">
-            <h1>
-              08-12
-              <small>知而无怠</small>
-            </h1>
-          </div>  
-      </div>
-      </a>
+    <span id="/post/20090824/" data-flag-title="独自去登山" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
+    </span>
     
   </div>
-  
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-    
-      
-        <li class="pagination-li pagination-active">
-            <a href="/archives/page/../">
-              1
-            </a>
-        </li>
-      
-    
-    
-  </ul>
-</div>
-</div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <p style="TexT-inDenT: 2em"><font style="FonT-siZe: 22px">&nbsp;&nbsp;&nbsp;&nbsp;
+<font color="#339933">今天早早的吃过早饭后便带上行囊出发去爬山了😜</font><font color="#339933"><a><img style="WiDTH: 274px; HeiGHT: 203px" height="375" src="https://img10.360buyimg.com/ddimg/jfs/t1/184542/6/11959/27897/60dcb56bE75d82682/67ea57e7c5096091.jpg" width="361" align="right" id="image_operate_77451625077295508"></a></font></font><font style="text-indent: 2em; font-size: 22px;"><font color="#339933">,山里山路崎</font><a></a><font color="#339933">岖杂草丛生,已经四年多没有爬山了,爬山的体力消耗还是比较大的.费了好大的气力😂才爬上了其实不算高的高山之顶,山顶上风很大但四周却相当静寂,依稀能够听到山下人家的交谈声、半山腰的林子里鸟儿们发出的欢快歌唱.静静地闻着草儿的香气,迎着风儿的轻抚,享受着晨光赠予的温暖,身边淡淡的凉意渐渐散去......😄</font>&nbsp;</font><font style="text-indent: 2em; font-size: 22px;">&nbsp; &nbsp;</font></p>
+<p style="TexT-inDenT: 2em">&nbsp;</p>
+<p style="TexT-inDenT: 2em"><font style="FonT-siZe: 22px">&nbsp; <font color="#6699FF">在山顶上感受日光眠😴是一个不错👍的享受和回忆,轻身躺在细草之丛,自由伸展四躯,轻轻闭上眼帘,细细品味阳光、微风、花香和草香的综合产物,内心无比的宁静与安适,仿佛有那么一刻希望时光就此而止......</font>&nbsp;</font><font style="FonT-siZe: 22px">&nbsp;&nbsp;&nbsp;</font></p>
+<p style="TexT-inDenT: 2em">&nbsp;</p>
+<p style="TexT-inDenT: 2em"><font style="FonT-siZe: 22px">&nbsp; <font color="#99CC66"><font color="#FF3333">近些年来国家大搞"国有林地承包",山上许多记忆中的不知名的"野树"已被大片木材型树苗替代,山里变化蛮大的,唯一没有变的是山依旧那样的绿,清凉的泉水依旧那样静悄悄地流淌着,空气依旧那样的清新,阳光依旧那样的和旭温暖.置身山里有种回归自然的纯朴与宁静之感。</font><img style="WiDTH: 41px; HeiGHT: 41px" height="19" src="http://simg.sinajs.cn/blog/images/face/001.gif" width="80" align="right"></font></font></p>
 
-          </section>
+            </div>
+            
+              <div class="reward-btn">
+                <div class="reward-btn-text">赞赏</div>
+              </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者: </strong>
+      Super_chen520
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明: </strong>
+      除特别声明外,所有文章内容均来自原创,转载请注明出处!
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://bbsgithubs.github.io/tag/share/"># 分享</a>
+    
+      <a href="https://bbsgithubs.github.io/tag/emotion/"># 心情</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">Wellcom Mcfen</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="Wellcom Mcfen" href="https://bbsgithubs.github.io/post/hello/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="追忆" href="https://bbsgithubs.github.io/post/20090822-1/">追忆</a>
+        <a class="nav-mobile-next" title="追忆" href="https://bbsgithubs.github.io/post/20090822-1/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+            
+  <script src="https://cdn.jsdelivr.net/gh/shuiqing2046/shuiqing2046.github.io@master/assets/js/fixValine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'Id20a2IBLWim6sM3dHuli8QK-gzGzoHsz',
+    appKey: '4rSRJCLOWAkFWQf8nnRnKSFG',
+    avatar: 'mp',
+    placeholder: '看完有啥戏法? 说说呗~',
+    pageSize: '',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'true',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
         </div>
       </div>
     </div>
@@ -641,6 +688,235 @@
     aelem.appendChild(image);
     parent.insertBefore(aelem, next);
   })
+</script>
+
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持,我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+            <img id="zfb" class="reward-img" src="https://pay.mcfen.net/images/zfb.png" alt="赞赏码">
+          
+          
+            <img id="wx" class="reward-img" src="https://pay.mcfen.net/images/wx.png" alt="赞赏码">
+          
+        </div>
+      </div>
+      <p class="reward-word">大爷行行好,赏口饭吃吧</p>
+      <p class="reward-tip">打开手机扫一扫,即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      <div id="zfbBtn" class="pay-text">
+        支付宝
+      </div>
+      
+      
+      <div id="wxBtn" class="pay-text">
+        微信支付
+      </div>
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        jQuery.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        jQuery.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        jQuery.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        jQuery.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      jQuery.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      jQuery.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
 </script>
 
   </div>
@@ -1514,7 +1790,6 @@ L最恶毒的话骂对方，现代大学教育让她们一面临&#34;丢脸&#34;
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbsgithubs/bbsgithubs.github.io@master/media/js/mouse/fireworks.js"></script>
-
 
 
 

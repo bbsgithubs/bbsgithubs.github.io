@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bbsgithubs.github.io</id>
     <title>Dream tok</title>
-    <updated>2021-06-30T18:35:51.282Z</updated>
+    <updated>2021-06-30T18:42:41.603Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bbsgithubs.github.io"/>
     <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
@@ -60,6 +60,20 @@
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[我要的生活]]></title>
+        <id>https://bbsgithubs.github.io/post/20100603/</id>
+        <link href="https://bbsgithubs.github.io/post/20100603/">
+        </link>
+        <updated>2010-06-03T03:29:23.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[你看出了什么,朋友.]]></title>
+        <id>https://bbsgithubs.github.io/post/20100408/</id>
+        <link href="https://bbsgithubs.github.io/post/20100408/">
+        </link>
+        <updated>2010-04-08T03:43:24.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[养生保健]]></title>
         <id>https://bbsgithubs.github.io/post/20100328/</id>
         <link href="https://bbsgithubs.github.io/post/20100328/">
@@ -79,19 +93,5 @@
         <link href="https://bbsgithubs.github.io/post/20090822-1/">
         </link>
         <updated>2009-08-22T09:51:45.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[珍惜身的边人和事]]></title>
-        <id>https://bbsgithubs.github.io/post/20090813-2/</id>
-        <link href="https://bbsgithubs.github.io/post/20090813-2/">
-        </link>
-        <updated>2009-08-12T17:37:39.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[祝福母亲]]></title>
-        <id>https://bbsgithubs.github.io/post/20090813-1/</id>
-        <link href="https://bbsgithubs.github.io/post/20090813-1/">
-        </link>
-        <updated>2009-08-12T17:02:09.000Z</updated>
     </entry>
 </feed>

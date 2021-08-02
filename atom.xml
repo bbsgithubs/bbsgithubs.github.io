@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bbsgithubs.github.io</id>
     <title>Dream tok</title>
-    <updated>2021-07-01T23:17:34.019Z</updated>
+    <updated>2021-08-02T19:31:34.677Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bbsgithubs.github.io"/>
     <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://bbsgithubs.github.io/images/avatar.png</logo>
     <icon>https://bbsgithubs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Dream tok</rights>
+    <entry>
+        <title type="html"><![CDATA[某些玩家退服引发的思考]]></title>
+        <id>https://bbsgithubs.github.io/post/20210803/</id>
+        <link href="https://bbsgithubs.github.io/post/20210803/">
+        </link>
+        <updated>2021-08-03T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于1.16+MC服务器的一些心情记录]]></title>
+        <id>https://bbsgithubs.github.io/post/20210618/</id>
+        <link href="https://bbsgithubs.github.io/post/20210618/">
+        </link>
+        <updated>2021-06-18T04:00:00.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[「梦里幽境」 ☯碎碎唸念 絕筆？？☯]]></title>
         <id>https://bbsgithubs.github.io/post/20200328/</id>
@@ -79,19 +93,5 @@
         <link href="https://bbsgithubs.github.io/post/20120414/">
         </link>
         <updated>2012-04-14T00:32:23.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[父母亦是我们生命里永远的宝,爱他们就用行动来证明吧]]></title>
-        <id>https://bbsgithubs.github.io/post/20110320-1/</id>
-        <link href="https://bbsgithubs.github.io/post/20110320-1/">
-        </link>
-        <updated>2011-03-20T14:18:12.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[缅怀生命 自强不息]]></title>
-        <id>https://bbsgithubs.github.io/post/20110320/</id>
-        <link href="https://bbsgithubs.github.io/post/20110320/">
-        </link>
-        <updated>2011-03-20T13:13:57.000Z</updated>
     </entry>
 </feed>

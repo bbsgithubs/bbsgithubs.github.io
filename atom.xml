@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bbsgithubs.github.io</id>
-    <title>Dream tok</title>
-    <updated>2021-08-02T21:51:28.571Z</updated>
+    <title>Dream Talk</title>
+    <updated>2021-08-02T21:57:49.552Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bbsgithubs.github.io"/>
     <link rel="self" href="https://bbsgithubs.github.io/atom.xml"/>
     <subtitle>思念你 在梦里 散不去</subtitle>
     <logo>https://bbsgithubs.github.io/images/avatar.png</logo>
     <icon>https://bbsgithubs.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Dream tok</rights>
+    <rights>All rights reserved 2021, Dream Talk</rights>
     <entry>
         <title type="html"><![CDATA[某些玩家退服引发的思考]]></title>
         <id>https://bbsgithubs.github.io/post/20210803/</id>

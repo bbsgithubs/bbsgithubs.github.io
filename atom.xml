@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.mcfen.net</id>
+    <title>Dream Talk</title>
+    <updated>2022-09-18T13:45:49.830Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.mcfen.net"/>
+    <link rel="self" href="https://blog.mcfen.net/atom.xml"/>
+    <subtitle>思念你 在梦里 散不去</subtitle>
+    <logo>https://blog.mcfen.net/images/avatar.png</logo>
+    <icon>https://blog.mcfen.net/favicon.ico</icon>
+    <rights>All rights reserved 2022, Dream Talk</rights>
+    <entry>
+        <title type="html"><![CDATA[提前安排升级部署计划]]></title>
+        <id>https://blog.mcfen.net/post/20211203/</id>
+        <link href="https://blog.mcfen.net/post/20211203/">
+        </link>
+        <updated>2021-12-03T06:22:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[某些玩家退服引发的思考]]></title>
+        <id>https://blog.mcfen.net/post/20210803/</id>
+        <link href="https://blog.mcfen.net/post/20210803/">
+        </link>
+        <updated>2021-08-02T22:10:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于1.16+MC服务器的一些心情记录]]></title>
+        <id>https://blog.mcfen.net/post/20210618/</id>
+        <link href="https://blog.mcfen.net/post/20210618/">
+        </link>
+        <updated>2021-06-18T04:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「梦里幽境」 ☯碎碎唸念 絕筆？？☯]]></title>
+        <id>https://blog.mcfen.net/post/20200328/</id>
+        <link href="https://blog.mcfen.net/post/20200328/">
+        </link>
+        <updated>2020-03-27T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[阶段性小感想]]></title>
+        <id>https://blog.mcfen.net/post/20190504/</id>
+        <link href="https://blog.mcfen.net/post/20190504/">
+        </link>
+        <updated>2019-05-04T14:22:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「梦里幽境」 ☯管理自传???标题过于难起,就这样吧☯]]></title>
+        <id>https://blog.mcfen.net/post/20190311/</id>
+        <link href="https://blog.mcfen.net/post/20190311/">
+        </link>
+        <updated>2019-03-11T07:41:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「梦里幽境」 阶段小结(有心的朋友请务必认真查阅)]]></title>
+        <id>https://blog.mcfen.net/post/20190215/</id>
+        <link href="https://blog.mcfen.net/post/20190215/">
+        </link>
+        <updated>2019-02-15T06:20:00.000Z</updated>
+        <summary type="html"><![CDATA[<p style="text-align:center">
+    <span style="font-family: &quot;times new roman&quot;;"><img src="https://i.loli.net/2019/04/26/5cc28124b0cfc.jpg" width="632" height="281" title="" alt="" style="width: 632px; height: 281px;"/></span>
+</p>
+]]></summary>
+        <content type="html"><![CDATA[<p style="text-align:center">
+    <span style="font-family: &quot;times new roman&quot;;"><img src="https://i.loli.net/2019/04/26/5cc28124b0cfc.jpg" width="632" height="281" title="" alt="" style="width: 632px; height: 281px;"/></span>
+</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wellcom Mcfen]]></title>
+        <id>https://blog.mcfen.net/post/hello/</id>
+        <link href="https://blog.mcfen.net/post/hello/">
+        </link>
+        <updated>2017-02-14T06:58:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>🏆  欢迎来到 <strong>梦里幽境</strong> ！<br>
+🚚  <strong>梦里幽境</strong> 是一个我的世界服务器,由一群热爱MC的玩家汇聚而成...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>🏆  欢迎来到 <strong>梦里幽境</strong> ！<br>
+🚚  <strong>梦里幽境</strong> 是一个我的世界服务器,由一群热爱MC的玩家汇聚而成...</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[思家]]></title>
+        <id>https://blog.mcfen.net/post/20120414-2/</id>
+        <link href="https://blog.mcfen.net/post/20120414-2/">
+        </link>
+        <updated>2012-04-14T01:18:33.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[落梅]]></title>
+        <id>https://blog.mcfen.net/post/20120414-1/</id>
+        <link href="https://blog.mcfen.net/post/20120414-1/">
+        </link>
+        <updated>2012-04-14T01:03:19.000Z</updated>
+    </entry>
+</feed>
